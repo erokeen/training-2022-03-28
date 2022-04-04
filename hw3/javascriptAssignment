@@ -1,0 +1,140 @@
+//1 Write a JavaScript function that reverse a number.
+const reverseNum = num => parseFloat(num.toString().split('').reverse().join(''))*Math.sign(num);
+
+console.log(reverseNum(-11213))
+
+//2 Write a JavaScript function that checks whether a passed string is palindrome or not?
+function palindrome(str) {
+  var regex = /[^A-Za-z0-9_]/g;
+
+  var lowRe = str.toLowerCase().replace(regex, '');
+
+  var reverse = lowRe.split('').reverse().join('');
+
+  if (reverse === lowRe){
+    return 'palindrome of ' +str + ' is ' + reverse;
+  } else {
+    return str + " is not a palindrome";
+  }
+}
+
+console.log(palindrome('22'));
+
+
+//3 Write a JavaScript function that generates all combinations of a string.
+function combi(str){
+  let arr = [];
+  
+  for(let i = 0; i < str.length; i++){
+      for(let j = i + 1; j < str.length + 1; j++){
+         arr.push(str.slice(i,j));
+      }
+  }
+
+  return arr;
+}
+
+console.log(combi("dog"));
+
+//4 Write a JavaScript function that returns a passed string with letters in alphabetical order. 
+
+function alphabetOrder(str){
+return str.split('').sort().join('');
+}
+
+console.log(alphabetOrder('cbade'));
+
+//5 Write a JavaScript function that accepts a string as a parameter and converts the first letter of 
+//each word of the string in upper case. 
+
+function firstUppercase(str){
+  var ogArray = str.split(' ');
+  var newArray = [];
+
+  for (let i = 0; i < ogArray.length; i++){
+    newArray.push(ogArray[i].charAt(0).toUpperCase()+ogArray[i].slice(1));
+  }
+  return newArray.join(' ');
+}
+
+console.log(firstUppercase("eat banana one a day"));
+
+//6 Write a JavaScript function that accepts a string as a parameter and find the longest word
+//within the string
+
+function findLongestWord(str){
+  var ogArray = str.split(' ');
+  
+  return ogArray.sort((a,b) => b.length - a.length)[0];
+  }
+
+  console.log(findLongestWord("today i ate a large butterflies without"))
+
+//8 Write a JavaScript function that accepts a number as a parameter and check the number is
+//prime or not.
+
+function isPrime(n){
+if (n === 1){
+  return false;
+}
+else if (n > 1) {
+  for (let i = 2; i < n ; i++){
+    if (n % i === 0){
+      return false;
+      }
+  }
+} return true;
+}
+console.log(isPrime(11))
+
+//9 Write a JavaScript function which accepts an argument and returns the type. 
+function type(x){
+  return typeof(x);
+}
+
+console.log(type(type))
+console.log(type(2))
+console.log(type(false))
+console.log(type('true'))
+console.log(type([]))
+console.log(type())
+
+//10 Write a JavaScript function which returns the n rows by n columns identity matrix.
+function matrix(n) {
+
+  var i;
+  var j;
+
+  for (i=0; i < n; i++)
+  {
+    for (j=0; j < n; j++)
+    {
+         if (i === j)
+         {
+          
+           console.log(' 1 ');
+         }
+                
+         else 
+          {
+           console.log(' 0 ');}
+          }
+       console.log('----------');
+     }
+ }
+matrix(4);
+
+//11 Write a JavaScript function which will take an array of numbers stored and find the second
+// lowest and second greatest numbers, respectively.
+let array = [3,9,6, 4, 10, 13]
+
+function secondSort(arr){
+
+const secondLowest = arr => arr.sort((a, b) => a - b)[1]
+
+const secondLargest = arr => arr.sort((a, b) => b - a)[1]
+
+return secondLowest(arr) + ', ' + secondLargest(arr);
+}
+
+console.log(secondSort(array))
