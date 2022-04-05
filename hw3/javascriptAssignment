@@ -194,3 +194,13 @@ function expo(b,n)
     return Math.pow(b,n);
 }
 console.log(expo(2,3))
+
+//16 Write a JavaScript function to extract unique characters from a string.
+function unique(str){
+  str.split('');
+  str = new Set(str);
+  str = [...str].join('');
+  return str;
+}
+console.log(unique("thequickbrownfoxjumpsoverthelazydog"))
+
