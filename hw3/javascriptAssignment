@@ -138,3 +138,37 @@ return secondLowest(arr) + ', ' + secondLargest(arr);
 }
 
 console.log(secondSort(array))
+
+//12 Write a JavaScript function which says whether a number is perfect.
+
+function isNumberPerfect(num){
+var sum = 0;
+for (let i = 1; i < num; i++){
+  if( num % i === 0){
+    sum += i;
+  }
+}
+if (sum === num){
+return num + " is  a perfect number";
+}else {
+  return num + " is not a perferct number";
+}
+}
+
+console.log(isNumberPerfect(6))
+
+//13 Write a JavaScript function to compute the factors of a positive integer.
+
+function integerFactor(num){
+let ogArray = [];
+for(let i = 1; i <= num; i++) {
+
+  if(num % i == 0) {
+    ogArray.push(i);
+  }
+}
+return ogArray;
+}
+
+console.log(integerFactor(21))
+
