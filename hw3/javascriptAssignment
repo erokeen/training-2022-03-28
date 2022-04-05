@@ -172,3 +172,17 @@ return ogArray;
 
 console.log(integerFactor(21))
 
+//14 Write a JavaScript function to convert an amount to coins.
+
+function amountToCoins(amount, coins){
+  var ogArray = []
+  for (let i = 0; i < coins.length; i++){
+    while (amount >= coins[i]){
+      amount -= coins[i];
+      ogArray.push(coins[i]);
+    }
+  }
+  return ogArray;
+}
+
+console.log(amountToCoins(46,[25,10,5,2,1]))
